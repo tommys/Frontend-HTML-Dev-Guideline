@@ -1,0 +1,872 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Frontend HTML Guideline</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+<link rel="stylesheet" href="https://file.myfontastic.com/dLWYWp2mHEuDeR4xaSPBkb/icons.css">
+<!--<link rel="stylesheet" href="Frontend-HTML-Guideline.css">-->
+<style type="text/css">
+@charset "utf-8";
+/***********************************************
+	Reset CSS
+************************************************/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+body {
+	line-height: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #999;
+	margin: 20px 0;
+	padding: 0;
+}
+input, select {
+	vertical-align: middle;
+}
+del {
+	text-decoration: line-through;
+}
+/* Misc style */
+table, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+}
+input, select, textarea {
+	font-family: "Raleway", sans-serif;
+}
+/* Reset input, select, textarea fonts */
+.clearfix {
+	display: inline-block;
+}
+.clearfix:after {
+	content: " ";
+	display: block;
+	height: 0;
+	clear: both;
+	font-size: 0;
+	visibility: hidden;
+}
+.clearfix {
+	display: block;
+}
+/***********************************************
+	Body CSS
+************************************************/
+body {
+	font-family: "Raleway", arial, sans-serif;
+	font-size: 16px;
+	color: #333;
+	background: #fff;
+}
+a {
+	color: #006494;
+	text-decoration: none;
+}
+a:hover {
+	color: #13293D;
+	text-decoration: underline;
+}
+hr {
+	border: none;
+	border-bottom: 1px #ddd dotted;
+	height: 1px;
+	margin: 30px 20px;
+	padding: 0;
+}
+
+.mr30 {
+	margin-right: 30px;
+}
+
+.mt30 {
+	margin-top: 30px;
+}
+
+header {
+	color: #fff;
+	background: #13293D;
+	margin: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+}
+header article {
+	padding: 30vh 0;
+	line-height: 3vw;
+}
+header h1  {
+	font-size: 4vw;
+	font-weight: 500;
+}
+header h1 span {
+	font-size: 2vw;
+}
+header h2 {
+	font-size: 2vw;
+	color: #E8F1F2;
+}
+header h3 {
+	font-size: 4vw;
+	color: #fff;
+	margin: 0 0 60px 0;
+	font-weight: 700;
+	letter-spacing: 0.1vw;
+}
+header h3 strong {
+	font-weight: 700;
+}
+header h4 {
+	position: absolute;
+	left: 50%;
+	bottom: 10px;	
+	font-size: 1vw;
+}
+header h4 p {
+	position: relative;
+	left: -50%;
+}	
+header aside {
+	margin: 60px 0 0 0;
+}
+header aside i {
+	font-family: fontastic;
+	font-size: 6vw;
+	color: #fff;
+}
+
+nav {
+	margin: 30px 30px 0 30px;
+	line-height: 26px;
+}
+nav h1 {
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0 0 5px 0;
+}
+nav ul li {
+	font-weight: 500;
+}
+nav ul li ul li {
+	margin: 0 0 0 20px;
+}
+nav ul li ul li a {
+	margin: 0;
+	font-size: 14px;
+	color: #3e3f4f;
+}
+nav h1 i {
+	float: left;
+	margin: 2px 10px 0 0;
+}
+
+#global {
+	max-width: 980px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+section {
+	padding: 0 30px;
+	line-height: 26px;
+}
+section h2 {
+	margin: 0 0 20px 0;
+	font-weight: 600;
+	color: #13293D;
+	font-size: 20px;
+}
+section ul.developmentGuide {
+	margin: 0 0 0 30px;
+}
+section ul.developmentGuide li {
+	margin: 0;
+	padding: 0 0 5px 0;
+	list-style-type: decimal;
+	line-height: 26px;
+}
+section article {
+	margin: 0 0 30px 10px;
+}
+section article h3 {
+	font-weight: 500;
+	font-size: 18px;
+	margin: 0 0 10px 0;
+}
+section article h4 {
+	margin: 0 0 10px 0;
+}
+section article p {
+	margin: 0 0 10px 10px;
+	line-height: 26px;
+}
+section pre {
+	font-family: 'Source Code Pro', serif;
+	border: 1px #ccc solid;
+	margin: 0 0 20px 0;
+	padding: 10px;
+	background: #fafafa;
+}
+.recommended {
+	color: #2cb300;
+	font-weight: 500;
+}
+aside.recommended {
+	border: 1px #2cb300 solid;
+	padding: 10px;
+	font-weight: normal;
+}
+h4.recommended .icon-thumbs-o-up {
+	float: left;
+	margin: 2px 10px 0 0;
+	font-size: 20px;
+}
+
+.not-recommended {
+	color: #D90429;
+	font-weight: 500;
+}
+aside.not-recommended {
+	border: 1px #CB0003 solid;
+	padding: 10px;
+	font-weight: normal;
+	margin: 0 0 20px 0;
+}
+
+h4.not-recommended .icon-thumbs-o-down {
+	float: left;
+	margin: 2px 10px 0 0;
+	font-size: 20px;
+}
+
+
+#End-of article {
+	font-size: 16px;
+	margin: 100px auto;
+	text-align: center;
+}
+#AS-Watson article {
+	font-size: 16px;
+	margin: 100px auto;
+	text-align: center;
+}
+#AS-Watson article p {
+	margin: 0;
+}
+
+#AS-Watson article p:first-child {
+	color: #e31836
+}
+#AS-Watson span.logo {
+	margin: 20px 0 0 0;
+	font-weight: 600;
+	font-size: 28px;
+	background: #009da8;
+	display: inline-block;
+	color: #fff;
+	padding: 5px 25px;
+	border-radius: 25px 0px;
+	border-bottom: 4px #ff0d0d solid;
+}
+
+.intro h2.title.sec {
+	margin: 20px 0;
+}
+
+.redOne {
+	color: #FF0000;
+	font-weight: 600;
+}
+.redTwo {
+	color: #C00000;
+	font-weight: 600;
+}
+
+table.crossBrowsers {
+	display: block;
+	width: 100%;
+	overflow: auto;
+	word-break: normal;
+	word-break: keep-all;
+	margin: 0 0 30px 0;
+}
+table.crossBrowsers th {
+	font-weight: bold;
+	text-align: left;
+}
+table.crossBrowsers th, table.crossBrowsers td {
+	padding: 6px 13px;
+	border: 1px solid #ddd;
+}
+table.crossBrowsers tr {
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+}
+table.crossBrowsers tr:nth-child(2n) {
+	background-color: #f8f8f8;
+}
+
+.notedStar {
+	font-size: 30px;
+	float: left;
+}
+
+.crossBrowsersRanges {
+	margin: 0 0 30px 0;
+}
+
+sup {
+	font-size: 13px;
+	padding: 0 0 0 1px;
+	color: #d90429;
+	vertical-align: super;
+}
+
+#back-to-top {
+	
+	display: block;
+	color: #13293d;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="globalWrapper">
+
+	<header class="clearfix">
+		<article>
+		
+			<!--<h3>Watsons Mall</h3>-->
+			
+            <h1>Frontend HTML Dev Guideline <span>v1.1</span></h1>
+            <h2>Standards for developing flexible and sustainable HTML, CSS and Javascript.</h2>
+            <aside>
+                <i class="icon-w3c mr30"></i>
+                <i class="icon-html5 mr30"></i>
+				<i class="icon-css"></i>
+            </aside>
+
+			<h4>
+				<p>
+				Last Update: 09-Aug-2016
+				</p>
+			</h4>
+
+		</article>        
+	</header>
+
+
+<div id="global">	
+
+	<nav id="Table of contents">
+		<h1><i class="icon-list"></i> Table of contents</h1>
+		<ul>
+		<li><a href="#Introduction">Introduction</a></li>
+		<li><a href="#Standards">HTML Standards and Browser Support</a></li>
+		<li><a href="#General-Development-Guide">General Development Guide</a></li>
+		<li><a href="#Responsive">Responsive Development Guide</a></li>
+		<li>
+			<a href="#General-Formatting-Rules">General Formatting Rules For HTML, CSS and JS</a>
+			<ul>
+				<li>- <a href="#Formatting-Rules-01">Write Well Structured HTML</a></li>
+				<li>- <a href="#Formatting-Rules-02">Write Valid Semantic Markup</a></li>
+				<li>- <a href="#Formatting-Rules-03">Capitalization</a></li>
+				<li>- <a href="#Formatting-Rules-04">File structure</a></li>
+				<li>- <a href="#Formatting-Rules-05">Trailing Whitespace</a></li>
+				<li>- <a href="#Formatting-Rules-06">Indentation</a></li>
+				<li>- <a href="#Formatting-Rules-07">Encoding</a></li>
+				<li>- <a href="#Formatting-Rules-08">Comments</a></li>
+				<li>- <a href="#Formatting-Rules-09">HTML Semantics</a></li>
+				<li>- <a href="#Formatting-Rules-10">Paragraphs</a></li>
+				<li>- <a href="#Formatting-Rules-11">Multimedia Fallback</a></li>
+				<li>- <a href="#Formatting-Rules-12">HTML Quotation Marks</a></li>
+				<li>- <a href="#Formatting-Rules-13">Attribute should not be empty</a></li>
+			</ul>
+		</li>
+		
+		<!--<li><a href="#General">General</a></li>-->
+		</ul>
+	</nav>
+
+	<hr />
+	
+	<section id="Introduction" class="intro">
+
+		<h2 class="title">Introduction</h2>
+		
+		<article>
+			<p>This document contains the guidelines and best practices for the frontend web development team at <span class="redOne">eLab</span>, <span class="redTwo">A.S Watson</span>.</p>
+			<p>Each note of detail here represents either:</p>
+			<ul class="developmentGuide">
+				<li>A reminder to follow existing standards or industry conventions.</li>
+				<li>Keep code consistency across our projects.</li>
+				<li>Facilitate ease of maintenance.</li>
+				<li>Ensure we create professional quality websites.</li>
+				<li>Guide staff on-boarding or instruct new developers and digital agency.</li>
+				<li>We know that the same convention for all projects, clients, and teams isn’t practical. For these reasons improvement of this document are encouraged for various projects and teams.</li>
+				<li>What works well can be submitted and discussed as new recommendations moving forward.</li>
+			</ul>
+		</article>
+		
+		<article>
+			
+		</article>
+		
+	</section>
+		
+	<hr />
+		
+	<section id="Standards" class="standards">
+	
+		<h2 class="title sec">HTML Standards and Browser Support</h2>
+		
+		<article>
+			<p>All markup will be written using the latest HTML5 markup specifications from the W3C, as implemented by browsers and devices that meet project requirements.</p>
+			<p>All HTML, CSS and Javascript are well tested across all major browser (Chrome, Firefox, Safari and IE8+), IOS and Android Devices.</p>
+		</article>
+		
+		<article>
+			<h3>Cross browsers - Browser Specification</h3>
+
+			<table class="crossBrowsers">
+				<tbody>
+					<tr>
+						<th>Browser</th>
+						<th>Support Range</th>
+					</tr>
+					<tr>
+						<td>Firefox<sup>1</sup></td>
+						<td>A</td>
+					</tr>
+					<tr>
+						<td>Chrome<sup>1</sup></td>
+						<td>A</td>
+					</tr>
+					<tr>
+						<td>Safari<sup>1</sup></td>
+						<td>A</td>
+					</tr>
+					<tr>
+						<td>Edge</td>
+						<td>A</td>
+					</tr>
+					<tr>
+						<td>IE11</td>
+						<td>A</td>
+					</tr>
+					<tr>
+						<td>IE10</td>
+						<td>B</td>
+					</tr>
+					<tr>
+						<td>IE9</td>
+						<td>B</td>
+					</tr>
+					<tr>
+						<td>IE8<sup>2</sup></td>
+						<td>C</td>
+					</tr>
+					</tbody>
+			</table>
+			
+			
+			<table class="crossBrowsers">
+				<tbody>
+					<tr>
+						<th>Tablet Browser<sup>3</sup></th>
+						<th>Support Range</th>
+					</tr>
+					<tr>
+						<td>Android Chrome</td>
+						<td>A</td>
+					</tr>
+					<tr>
+						<td>Android Firefox</td>
+						<td>C</td>
+					</tr>
+					<tr>
+						<td>iOS Safari</td>
+						<td>A</td>
+					</tr>
+					
+				</tbody>
+			</table>
+					
+			<table class="crossBrowsers">
+				<tbody>
+					<tr>
+						<th>Mobile Browser<sup>3</sup></th>
+						<th>Support Range</th>
+					</tr>
+					<tr>
+						<td>Android Chrome</td>
+						<td>A</td>
+					</tr>
+					<tr>
+						<td>Android Firefox</td>
+						<td>C</td>
+					</tr>
+					<tr>
+						<td>iOS Safari</td>
+						<td>A</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+			<ul class="crossBrowsersRanges">
+				<li><span class="rangeA">A</span> - Fully compatible on interaction and visual design follow from layout and style guide.</li>
+				<li><span class="rangeB">B</span> - Allow difference between Support Range A, but does not destroy the overall visual design.</li>
+				<li><span class="rangeC">C</span> - Detail of interaction and visual design can be ignored, but does not obstruct usage of the website.</li>
+			</ul>
+
+			<ul>
+				<li>1. We support latest 4 versions of Firefox, Chrome, Microsoft Edge and Safari due to them using incremental auto updates.</li>				
+				<li>2. IE8 – Disable responsive layout on IE8, one fixed width resolution only.</li>
+				<li>3. Tablet/Mobile browser only support up to date version.</li>
+			</ul>
+		</article>
+	
+	</section>
+
+	<hr />
+
+	<section id="General-Development-Guide">
+		<h2 class="title">General Development Guide</h2>
+		
+		<article>
+		<ul class="developmentGuide">
+			<li>CSS file will be better to be divided by section, global.css (e.g. header, footer, components across site), product.css…etc.</li>
+			<li>For all developed HTML template, please use standalones HTML without any includes.</li>
+			<li>For all HTML template, please complied with W3C web standards.</li>
+			<li id="Ownership">Ownership for third party Plugin and Library please make sure they are legal permissions which have been obtained for the use of the material (if any are required).</li>
+			<li>Use relative paths for the HTML template development.</li>
+			<li>Provide fonts file if there are any custom CSS font usages, if they are license required please advise if purchase needed. If license applies please check point <a href="#Ownership">#4</a>.</li>
+			<li>Do not add any unnecessary inline html code into js coding to render result in HTML.</li>
+			<li>Avoid inline Javascript and CSS in HTML.</li>
+			<li>From third party plugins or library resources, make sure to save all files (JS, CSS or images etc…) to local folder. Do not use any external link. If license applies please check point #4.</li>		
+			<li>Tables should not be used for page layout; only use them when you need to display tabular data.</li>
+			<li>Use CSS Media Queries to develop Responsive layout; Disable Responsive Layout for IE8 or below browser (For IE8 or below browser uses default preset maximum screen resolution only.)</li>
+			<li>Do not minified or encrypted source code. Except Plugin/Library from third party please use latest stable minified version.</li>
+			<li>Do not keep any unused file(s) in the delivered folder.</li>
+			<li>Load the least amount of JavaScript that is needed. Wherever possible include script files at the end of the HTML document just before the &lt;/body&gt; tag.</li>
+			<li>For CMS usage, do not use SVG for any icon or image.</li>
+			<li>Use Icon Fonts or Image Sprites for all small icons (Non-CMS icon only)</li>
+			<li>Should not have duplicate IDs in same HTML page</li>
+			<li>Write efficient and best practices Selector rules please referenace following <u><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS" target="_blank">Link</a></u></li>
+			<li>Do not use standalone full set of CSS for different languages (e.g. Chinese and English), create and overrite only necessary changes base on default language.</li>
+		</ul>
+		</article>
+		
+	</section>
+	
+	<hr />
+	
+	
+	<section id="Responsive">
+		<h2 class="title">Responsive Development Guide</h2>
+		
+		<article>
+		
+			<ul class="developmentGuide">
+				<li>Do not duplicate 2 set of HTML for responsive coding.<br />(Desktop Nav and Mobile Nav must be same set of coding.)</li>
+				<li>Percentage-based grids</li>
+				<li>Flexible images that scale</li>
+				<li>CSS Media Queries</li>
+				<li>Code with global styles that apply across all breakpoints</li>
+				<li>Be careful of images. Do not render a 5MB image at 100px by 100px. This does not change the bandwidth needed to download the file!</li>
+				<li>Test on real hardware. Actual testing on actual devices cannot be substituted with resizing a browser window, or even an "emulation" mode offered by a desktop browser.</li>
+				<li>Review site features for mobile-specific JavaScript events (e.g. touch, pointer, vs. mouse) and interactions (e.g. swipe) on actual mobile devices.</li>
+			</ul>
+			
+ 		</article>
+	</section>
+	
+	
+	<hr />
+		
+	
+	
+	<section id="General-Formatting-Rules">
+		<h2 class="title">General Formatting Rules For HTML, CSS and JS</h2>
+		
+		
+		
+		<article>
+			<h3 id="Formatting-Rules-01">Write Well Structured HTML</h3>
+			<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+<pre><code class="not-recommended">&lt;div class="container"&gt;
+  &lt;div class="article"&gt;
+    &lt;div class="headline">Headlines Across the World&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+			
+			<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+<pre><code class="recommended">&lt;div class="container"&gt;
+  &lt;article&gt;
+    &lt;h1>Headlines Across the World&lt;/h1&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre>
+		</article>			
+		
+		
+		
+		<article>
+			<h3 id="Formatting-Rules-02">Write Valid Semantic Markup</h3>
+			<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+<pre><code class="not-recommended">&lt;span class="sectionHeading"&gt;A Heading&lt;/span&gt;
+&lt;br /&gt; &lt;br /&gt;
+Lorem ipsum dolor sit amet. ...
+&lt;br /&gt; &lt;br /&gt;
+</code></pre>
+			
+			<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+<pre><code class="recommended"><span class="tag">&lt;h2&gt;</span><span class="pln">A Heading</span><span class="tag">&lt;/h2&gt;</span><span class="pln">
+</span><span class="tag">&lt;p&gt;</span><span class="pln">
+Lorem ipsum dolor sit amet. ...
+</span><span class="tag">&lt;/p&gt;</span></code></pre>
+		</article>
+		
+		
+				
+				
+		<article id="Formatting-Rules-03">
+            <h3>Capitalization</h3>
+            <p>Use only lowercase.</p>
+            <p>All code has to be lowercase. This applies to HTML element names, attributes, attribute values (unless text/CDATA).</p>
+
+            <h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+            <pre><code class="not-recommended">&lt;A HREF="/"&gt;Home&lt;/A&gt;</code></pre>
+
+            <h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+            <pre><code class="recommended">&lt;a href="#"&gt;Home&lt;/a&gt;</code></pre>
+        </article>
+	
+<article>
+<h3 id="Formatting-Rules-04">File structure</h3>
+<pre>
+Project Name/
+|---HTML/
+|-----index.html
+|---------assets/
+|---------assets/css/
+|------------global.css
+|------------main.css
+|------------product.css
+|---------assets/fonts/
+|---------assets/img/
+|---------assets/js/
+|------------main.js
+|------------homepage.js
+|---------assets/js/vendor/
+|------------jquery-1.x.x.js
+|------------jquery.plugin.js
+</pre>
+</article>
+
+		<article>
+			<h3 id="Formatting-Rules-05">Trailing Whitespace</h3>
+			<p>Remove trailing white spaces.</p>
+			<p>Trailing white spaces are unnecessary and can complicate diffs.</p>
+			
+			<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+			<pre><code class="not-recommended">&lt;p&gt;What?&lt;/p&gt;__</code></pre>
+			
+			<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+			<pre><code class="recommended">&lt;p&gt;What?&lt;/p&gt;</code></pre>	
+		</article>				
+		
+		
+		<article>
+            <h3 id="Formatting-Rules-06">Indentation</h3>
+            <p>Indentation should be consistent throughout the entire file.</p>
+			<p>For all languages, indent your code with tabs. The default tab size should be set as 4.</p>
+			
+			<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+			<aside class="not-recommended">Use space as tab.</aside>
+			
+			<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+			<aside class="recommended">Default tab size should be set as 4</aside>
+        </article>
+		
+		
+		<article>
+            <h3 id="Formatting-Rules-07">Encoding</h3>
+            <p>Use UTF-8 (no BOM).</p>
+            <p>Make sure your editor uses UTF-8 as character encoding, without a byte order mark. Specify the encoding in HTML templates and documents with <code>&lt;meta charset="utf-8"&gt;</code>.</p>
+        </article>
+		
+		
+		<article>
+            <h3 id="Formatting-Rules-08">Comments</h3>
+            <p>Explain code as needed, where possible.</p>
+            <p>Use comments to explain code: What does it cover, what purpose does it serve, and why is the respective solution used or preferred?</p>
+			
+			<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+			<aside class="recommended">It's very important to explain every JS Function does.</aside>
+        </article>
+		
+		
+		<article>
+			<h3 id="Formatting-Rules-09">HTML Semantics</h3>
+			<p>Use HTML according to its purpose.</p>
+			<p>Use elements for what they have been created for. For example, use heading elements for headings, <code>p</code> elements for paragraphs, <code>a</code> elements for anchor, etc. Using HTML according to its purpose is important for accessibility, reuse and code efficiency reasons.</p>
+			
+			<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+			<pre><code class="not-recommended">&lt;div onclick="goToRecommendations();"&gt;All recommendations&lt;/div&gt;</code></pre>
+			
+			<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+			<pre><code class="recommended">&lt;a href="recommendations.html"&gt;All recommendations&lt;/a&gt;</code></pre>
+		</article>
+		
+		<article>
+			<h3 id="Formatting-Rules-10">Paragraphs</h3>
+			<p>Avoid using &lt;br /&gt; tags to separate paragraphs or lines of text. Use &lt;p&gt; instead with proper opening and closing elements.</p>
+		
+		
+		<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+			<pre><code class="not-recommended">Paragraph with text&lt;br /&gt;Paragraph with text&lt;br /&gt;</code></pre>
+		
+		<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+			<pre><code class="recommended">&lt;p&gt;Paragraph with text&lt;/p&gt;
+&lt;p&gt;Paragraph with text&lt;/p&gt;</code></pre>
+
+		</article>
+		
+		<article>
+            <h3 id="Formatting-Rules-11">Multimedia Fallback</h3>
+            <p>Provide alternative contents for multimedia.</p>
+            <p>For multimedia, such as images, video, or animated objects via canvas, make sure to offer alternative access. For images that means use of meaningful alternative text and for video and audio transcripts and captions, if available.</p>
+            <p>Providing alternative contents is important for accessibility reasons. A blind user has few cues to tell what an image is about without the <code>alt</code> attributes, and other users may have no way of understanding what video or audio contents are about either.</p>
+            <p>For images whose alt attributes would introduce redundancy and for images whose purpose is purely decorative which you cannot immediately use CSS for, use no alternative text, as in <code>alt=""</code>.</p>
+
+            <h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+            <pre><code class="not-recommended">&lt;img src="watsons.png"&gt;</code></pre>
+
+            <h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+            <pre><code class="recommended">&lt;img src="watsons.png" alt="Watsons logo" /&gt;</code></pre>
+        </article>
+		
+		
+		<article>
+			<h3 id="Formatting-Rules-12">HTML Quotation Marks</h3>
+			<p>When quoting attribute values, use double quotation marks.</p>
+			
+			<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+			<pre><code class="not-recommended">&lt;a href='login/' class='btn'&gt;Login&lt;/a&gt;</code></pre>
+			
+			<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+			<pre><code class="recommended">&lt;a href="login/" class="btn"&gt;Login&lt;/a&gt;</code></pre>
+		</article>		
+		
+
+		<!--
+		<article>
+
+		<h3 id="Formatting-Rules-13">Attribute should not be empty</h3>
+
+		<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+		<pre><code class="not-recommended">
+		b
+		</code></pre>
+
+		<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+		<pre><code class="recommended">
+		a
+		</code></pre>
+
+		</article>
+		-->
+
+		<article>
+
+			<h3 id="Formatting-Rules-13">Attribute should not be empty</h3>
+
+			<h4 class="not-recommended"><i class="icon-thumbs-o-down"></i>Not Recommended:</h4>
+
+			<pre><code class="not-recommended">&lt;a href=&quot;&quot;&gt;Link&lt;/a&gt;
+
+			&lt;div class=&quot;&quot;&gt;content&lt;/div&gt;
+			</code></pre>
+
+			<h4 class="recommended"><i class="icon-thumbs-o-up"></i>Recommended:</h4>
+
+			<pre><code class="recommended">&lt;a href=&quot;javascript:;&quot;&gt;Link&lt;/a&gt;
+
+			&lt;div class=&quot;classname&quot;&gt;content&lt;/div&gt;
+			</code></pre>
+
+		</article>
+
+
+		
+	</section>
+	
+	<hr />
+    
+	<section id="End-of">
+		<article>
+			<p>- End -</p>
+		</article>
+	</section>
+	
+	<section id="AS-Watson">
+		<article>
+			<!--<p>eLab HK</p>-->
+			<p>A.S. Watson Group</p>
+			<p>A member of CK Hutchison Holdings Limited</p>	
+		</article>
+	</section>
+	
+	<a id="back-to-top" href="#Table of contents">Back to top</a>
+	
+</div>
+</div>
+</body>
+</html>
